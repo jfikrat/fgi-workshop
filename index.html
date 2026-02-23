@@ -1005,6 +1005,7 @@ html, body {
   var io = new IntersectionObserver(function(entries){
     entries.forEach(function(e){
       if (e.isIntersecting) e.target.classList.add('visible');
+      else e.target.classList.remove('visible');
     });
   }, { threshold: 0.45, root: root });
   document.querySelectorAll('.slide').forEach(function(s){ io.observe(s); });
